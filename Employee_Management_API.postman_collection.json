@@ -1,153 +1,342 @@
 {
 	"info": {
-		"_postman_id": "0d1b1b1b-1b1b-1b1b-1b1b-1b1b1b1b1b1b",
-		"name": "Employee Management API",
-		"description": "Collection for Employee Management CRUD operations",
+		"_postman_id": "emp-mgmt-advanced-2024",
+		"name": "Employee Management System API - Advanced",
+		"description": "Complete API collection for the Employee Management System with statistics, export, and bulk operations",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "Get All Employees",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/employees/",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"employees",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create Employee",
-			"request": {
-				"method": "POST",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"John Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"department\": \"IT\",\n    \"salary\": 75000.0\n}"
+			"name": "Employee CRUD",
+			"item": [
+				{
+					"name": "Get All Employees",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/employees/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"employees",
+								""
+							]
+						},
+						"description": "Retrieve a list of all employees"
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/employees/",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"employees",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Employee by ID",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/employees/1/",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"employees",
-						"1",
-						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Update Employee",
-			"request": {
-				"method": "PUT",
-				"header": [
-					{
-						"key": "Content-Type",
-						"value": "application/json",
-						"type": "text"
-					}
-				],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n    \"name\": \"John Doe Updated\",\n    \"email\": \"john.doe@example.com\",\n    \"department\": \"Engineering\",\n    \"salary\": 80000.0\n}"
+				{
+					"name": "Get Employee by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/employees/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"employees",
+								"1",
+								""
+							]
+						},
+						"description": "Retrieve a specific employee by ID"
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/employees/1/",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"employees",
-						"1",
-						""
-					]
+				{
+					"name": "Create Employee",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"department\": \"IT\",\n  \"salary\": 75000,\n  \"phone\": \"+1234567890\",\n  \"position\": \"Software Engineer\",\n  \"hire_date\": \"2024-01-15\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/employees/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"employees",
+								""
+							]
+						},
+						"description": "Create a new employee record"
+					},
+					"response": []
+				},
+				{
+					"name": "Update Employee",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe Updated\",\n  \"email\": \"john.doe@example.com\",\n  \"department\": \"IT\",\n  \"salary\": 80000,\n  \"phone\": \"+1234567890\",\n  \"position\": \"Senior Software Engineer\",\n  \"hire_date\": \"2024-01-15\"\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/employees/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"employees",
+								"1",
+								""
+							]
+						},
+						"description": "Update an existing employee"
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Employee",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/employees/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"employees",
+								"1",
+								""
+							]
+						},
+						"description": "Delete an employee by ID"
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "Delete Employee",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://127.0.0.1:8000/api/employees/1/",
-					"protocol": "http",
-					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"employees",
-						"1",
-						""
+			"name": "Statistics & Analytics",
+			"item": [
+				{
+					"name": "Get Employee Statistics",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/employees/stats/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"employees",
+								"stats",
+								""
+							]
+						},
+						"description": "Get statistics including total employees, average salary, department breakdown, and recent employees"
+					},
+					"response": [
+						{
+							"name": "Statistics Response Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/employees/stats/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"employees",
+										"stats",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"body": "{\n  \"total_employees\": 10,\n  \"average_salary\": 65000.50,\n  \"department_breakdown\": [\n    {\"department\": \"IT\", \"count\": 5},\n    {\"department\": \"HR\", \"count\": 3},\n    {\"department\": \"Finance\", \"count\": 2}\n  ],\n  \"recent_employees\": [\n    {\n      \"id\": 10,\n      \"name\": \"Jane Smith\",\n      \"email\": \"jane@example.com\",\n      \"department\": \"IT\",\n      \"salary\": \"70000.00\",\n      \"created_at\": \"2024-02-12T06:30:00Z\"\n    }\n  ]\n}"
+						}
 					]
 				}
-			},
-			"response": []
+			]
+		},
+		{
+			"name": "Bulk Operations",
+			"item": [
+				{
+					"name": "Bulk Delete Employees",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"ids\": [1, 2, 3]\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/employees/bulk-delete/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"employees",
+								"bulk-delete",
+								""
+							]
+						},
+						"description": "Delete multiple employees by providing an array of IDs"
+					},
+					"response": [
+						{
+							"name": "Bulk Delete Success",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"ids\": [1, 2, 3]\n}"
+								},
+								"url": {
+									"raw": "http://127.0.0.1:8000/api/employees/bulk-delete/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"employees",
+										"bulk-delete",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"body": "{\n  \"deleted\": 3\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Export",
+			"item": [
+				{
+					"name": "Export Employees to CSV",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/employees/export/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"employees",
+								"export",
+								""
+							]
+						},
+						"description": "Download all employee data as a CSV file"
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }
