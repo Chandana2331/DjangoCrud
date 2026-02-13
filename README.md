@@ -60,21 +60,21 @@ This creates an admin user with:
 
 ### 5. Run the Development Server
 ```bash
-python manage.py runserver
+python manage.py runserver 0.0.0.0:8080
 ```
 
-The server will start at `http://127.0.0.1:8000/`
+The server will start at `http://127.0.0.1:8080/`
 
 ## 🎯 Usage
 
 ### Home Page
-Visit `http://127.0.0.1:8000/` to:
+Visit `http://127.0.0.1:8080/` to:
 - Add new employees with the beautiful form
 - Fill in required fields: Name, Email, Department, Salary
 - Optionally add: Phone, Position, Hire Date
 
 ### Admin Dashboard
-Visit `http://127.0.0.1:8000/admin-dashboard/` to:
+Visit `http://127.0.0.1:8080/admin-dashboard/` to:
 - View employee statistics and charts
 - Search and filter employees
 - Edit employee details in modal
@@ -82,7 +82,7 @@ Visit `http://127.0.0.1:8000/admin-dashboard/` to:
 - Export data to CSV
 
 ### Django Admin Panel
-Visit `http://127.0.0.1:8000/admin/` to:
+Visit `http://127.0.0.1:8080/admin/` to:
 - Access Django's built-in admin interface
 - Login with admin/admin credentials
 
