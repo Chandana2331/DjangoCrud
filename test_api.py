@@ -1,7 +1,7 @@
 import requests
 import json
 
-BASE_URL = "http://127.0.0.1:8000/api/employees/"
+BASE_URL = "http://127.0.0.1:8080/api/employees/"
 
 def print_response(response):
     print(f"Status Code: {response.status_code}")
